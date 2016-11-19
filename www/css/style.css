@@ -1,0 +1,38 @@
+.center-text {
+  text-align: center !important;
+}
+
+.time-header {
+  font-size: 42px;
+  margin-top: 10px;
+  margin-bottom: -18px;
+}
+
+#memos div {
+  text-align: center;
+}
+
+.margin-fix {
+  margin-right: -1.2em !important;
+  margin-left: -1.2em !important;
+}
+
+div[data-role=header] {
+  background-color: #82C7F8 !important;
+}
+
+div[data-role=header] h1 {
+  padding-bottom: 2px !important;
+}
+
+div[data-role=header] h1 img {
+  width: 100px;
+}
+
+.px14 {
+  font-size: 14px;
+}
+
+.owl-wrapper-outer {
+  height: 190px !important;
+}

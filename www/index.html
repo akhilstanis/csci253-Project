@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" href="lib/jquery-mobile/jquery.mobile-1.4.5.css">
+        <script src="lib/jquery-mobile/jquery-1.11.3.min.js"></script>
+        <script src="lib/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+
+        <link rel="stylesheet" href="lib/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="lib/owl-carousel/owl.theme.css">
+        <script src="lib/owl-carousel/owl.carousel.js"></script>
+
+        <link rel="stylesheet" href="css/style.css">
+        <title>VIEJO</title>
+    </head>
+    <body>
+      <!-- <div data-role="page" id="login">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h1 class="center-text">Hello!</h1>
+          <p class="center-text" style="font-size: 14px;">Enter your username and password to login.</p>
+
+          <input type="text" name="textinput-1" id="textinput-1" placeholder="Username" value="" class="center-text">
+          <input type="text" name="textinput-2" id="textinput-2" placeholder="Password" value="" class="center-text">
+
+          <a data-rel="popup" data-position-to="window" data-transition="pop" data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-1" href="#popupDialog" >Sign In</a>
+          <a data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-2" href="#reset-password" >Forgot Password?</a>
+          <a data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-2" href="#signup">Sign Up</a>
+
+          <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;">
+              <div role="main" class="ui-content">
+                  <h3 class="ui-title center-text">Incorrect username or password.</h3>
+                  <p>The username or the password you entered was wrong. Please try again.</p>
+                  <p>Incase you have forgot the password, please use 'Forgot password to reset your password'.</p>
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Try Again</a>
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow" data-rel="back" data-transition="flow">Forgot Password</a>
+              </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div data-role="page" id="signup">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h2 class="center-text">New User Sign Up</h2>
+          <p class="center-text px14">Please fill up all the fields below to<br/>create your account.</p>
+          <input type="text" name="textinput-1" id="textinput-1" placeholder="Username" value="" class="center-text">
+          <input type="text" name="textinput-2" id="textinput-2" placeholder="Password" value="" class="center-text">
+          <input type="text" name="textinput-3" id="textinput-3" placeholder="First Name" value="" class="center-text">
+          <input type="text" name="textinput-4" id="textinput-4" placeholder="Last Name" value="" class="center-text">
+          <input type="text" name="textinput-5" id="textinput-5" placeholder="Mobile Number" value="" class="center-text">
+
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-1">Sign Up</button>
+          <a data-rel="popup" data-position-to="window" data-transition="pop" data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-1" href="#popupDialog2" >Sign In</a>
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-2">Cancel</button>
+
+
+          <div data-role="popup" id="popupDialog2" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;">
+              <div role="main" class="ui-content">
+                  <h1 class="ui-title center-text">Success!</h1>
+                  <p class="center-text">An SMS with confirmation link has been sent to your mobile number. Please click on the confirmation link to complete you sign up process. Once you have confirmed, you can use your username and password to login to app.</p>
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Goto to Login</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div data-role="page" id="reset-password">
+        <div data-role="header">
+          <h1>VIEJO</h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h2 class="center-text">Reset Password</h2>
+
+          <input type="text" name="textinput-1" id="textinput-1" placeholder="Username or Mobile Number" value="" class="center-text">
+
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-1">Send Reset Instructions</button>
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-2">Cancel</button>
+        </div>
+      </div> -->
+
+      <!-- <div data-role="page" id="main">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+
+        <div role="main" class="ui-content">
+          <div id="memos" class="owl-carousel">
+            <div>
+              <h1 class="center-text time-header">6:00 AM</h1>
+              <p class="center-text">Saturday, November 19</p>
+              <p class="center-text">
+                <strong>Cardio Excercise</strong>
+                <br/>
+                Retirement Home Gym
+                <br/>
+                Regular cardio excercises for 30 minutes
+              </p>
+            </div>
+            <div>
+              <h1 class="center-text time-header">12:30 PM</h1>
+              <p class="center-text">Tuesday, November 18</p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div>
+              <h1 class="center-text time-header">12:30 PM</h1>
+              <p class="center-text">Tuesday, November 18</p>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              </p>
+            </div>
+          </div>
+          <a data-rel="popup" data-position-to="window" data-transition="pop" data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-1" href="#popupDialogd" >✔ Mark As Done</a>
+          <button href="#popupDialogd" class="ui-shadow ui-btn ui-corner-all" type="submit" id="done-btn">✔ Mark As Done</button>
+          <div data-role="popup" id="popupDialogd" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;">
+              <div role="main" class="ui-content">
+                  <h3 class="ui-title center-text">⚠ EMERGENCY ⚠</h3>
+                  <p class="center-text">Are you sure you want to alert you emergency contact for help?</p>
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow" data-rel="back">Yes, NOW!</a>
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow" data-rel="back">No, Cancel</a>
+              </div>
+          </div>
+          <textarea cols="40" rows="8" name="textarea-2" id="skip-reason" placeholder="Enter your reason to skip..."></textarea>
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="skip-btn">✗ Skip</button>
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="skip-btn" style="background-color: #e74c3c; color: white;">⚠ EMERGENCY ⚠</button>
+        </div>
+      </div> -->
+
+      <!-- <div data-role="page" id="manage-users">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h1 class="center-text">Manage Users</h1>
+          <p>
+            <a data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-1" href="#add-elderly">Add New Elderly</a>
+          </p>
+          <p>&nbsp;</p>
+          <p>
+            <ul data-role="listview">
+              <li data-role="list-divider">Select User to Manage...</li>
+              <li class="center-text">You have not added any users yet.</li>
+              <li><a href="#show-user" data-transition="slide">Charles Xavier</a></li>
+              <li><a href="#">Iris West</a></li>
+              <li><a href="#">Kaitlyn Snow</a></li>
+              <li><a href="#">Cisco Ramon</a></li>
+              <li><a href="#">Harrison Wells</a></li>
+            </ul>
+          </p>
+        </div>
+      </div> -->
+
+      <!-- <div data-role="page" id="show-user">
+        <div data-role="header">
+          <a href="#manage-users" data-transition="slide" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-notext" style="margin-top: 5px;">Home</a>
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h3 class="center-text" style="margin-top: 0px;">Charles Xavier</h3>
+          <p>
+            <a data-transition="slide" class="ui-shadow ui-btn ui-corner-all" id="submit-1" href="#new-activity">Add New Activity</a>
+          </p>
+          <div data-role="tabs" id="tabs">
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#pending" data-ajax="false">Pending</a></li>
+                <li><a href="#done" data-ajax="false">Done</a></li>
+                <li><a href="#skipped" data-ajax="false">Skipped</a></li>
+              </ul>
+            </div>
+
+            <div id="pending">
+              <form class="ui-filterable">
+                <input id="autocomplete-input" data-type="search" placeholder="Search Pending Activities...">
+              </form>
+              <ul data-role="listview" class="margin-fix" data-filter="true" data-input="#autocomplete-input">
+                <li data-role="list-divider">Saturday, November 20, 2016 <span class="ui-li-count">2</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Cardio Excercise</h2>
+                    <p><strong>Retirement Home Gym</strong></p>
+                    <p>Regular cardio excercise for 30 minutes.</p>
+                    <p class="ui-li-aside"><strong>8:00</strong>AM</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Insulin Shot</h2>
+                    <p><strong>Medical Cupboard</strong></p>
+                    <p>Get the daily morning shot of Insulin.</p>
+                    <p class="ui-li-aside"><strong>9:00</strong>AM</p>
+                  </a>
+                </li>
+
+                <li data-role="list-divider">Sunday, November 21, 2016 <span class="ui-li-count">1</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Call Erik</h2>
+                    <p>Call Erik and try convincing him that mutants and humans can co-exist in peace.</p>
+                    <p class="ui-li-aside"><strong>4:00</strong>PM</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div id="done">
+              <form class="ui-filterable">
+                <input id="autocomplete-input" data-type="search" placeholder="Search Done Activities...">
+              </form>
+              <ul data-role="listview" class="margin-fix" data-filter="true" data-input="#autocomplete-input">
+                <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Done Activity</h2>
+                    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                    <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>jQuery Team</h2>
+                    <p><strong>Boston Conference Planning</strong></p>
+                    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                    <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                  </a>
+                </li>
+
+                <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Avery Walker</h2>
+                    <p><strong>Re: Dinner Tonight</strong></p>
+                    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                    <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div id="skipped">
+              <form class="ui-filterable">
+                <input id="autocomplete-input" data-type="search" placeholder="Search Skipped Activities...">
+              </form>
+              <ul data-role="listview" class="margin-fix" data-filter="true" data-input="#autocomplete-input">
+                <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Skipped Activity</h2>
+                    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                    <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>jQuery Team</h2>
+                    <p><strong>Boston Conference Planning</strong></p>
+                    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                    <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                  </a>
+                </li>
+
+                <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+
+                <li>
+                  <a href="index.html">
+                    <h2>Avery Walker</h2>
+                    <p><strong>Re: Dinner Tonight</strong></p>
+                    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                    <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div data-role="page" id="new-activity">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h2 class="center-text" style="margin-top: 0px;"><small style="font-size: 15px;">Charles Xavier</small><br />Add New Activty</h2>
+          <p class="center-text px14">Fill up the following fields create<br/>a new activity.</p>
+          <input placeholder="Set Date" type="text" onfocus="(this.type='date')"  id="date">
+          <input placeholder="Set Time" type="text" onfocus="(this.type='time')"  id="time">
+
+          <input type="text" name="textinput-1" id="textinput-1" placeholder="Title" value="">
+          <textarea cols="40" rows="8" name="textarea-2" id="skip-reason" placeholder="Description"></textarea>
+
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-1">Add Activity</button>
+          <a data-transition="slide" data-direction="reverse" class="ui-shadow ui-btn ui-corner-all" href="#show-user">Cancel</a>
+        </div>
+      </div> -->
+
+      <!-- <div data-role="page" id="add-elderly">
+        <div data-role="header">
+          <h1><img src="img/logo.png" /></h1>
+        </div>
+        <div role="main" class="ui-content">
+          <h1 class="center-text" style="margin-top: 0px;">Add New Elderly</h1>
+          <p class="center-text px14">Please fill up all the fields below to<br/>add new elderly.</p>
+          <input type="text" name="textinput-1" id="textinput-1" placeholder="Username" value="" class="center-text">
+          <input type="text" name="textinput-2" id="textinput-2" placeholder="Password" value="" class="center-text">
+          <input type="text" name="textinput-3" id="textinput-3" placeholder="First Name" value="" class="center-text">
+          <input type="text" name="textinput-4" id="textinput-4" placeholder="Last Name" value="" class="center-text">
+          <input type="text" name="textinput-5" id="textinput-5" placeholder="Mobile Number" value="" class="center-text">
+          <input type="text" name="textinput-6" id="textinput-6" placeholder="Emergency Contact Number" value="" class="center-text">
+
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-1">Add</button>
+          <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-2">Cancel</button>
+        </div>
+      </div> -->
+
+    <script src="js/index.js"></script>
+    </body>
+</html>
